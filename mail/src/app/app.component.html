@@ -1,0 +1,35 @@
+<div class="container-fluid p-5 bg-secondary text-white text-center ">
+  <h1><strong><b>Costarelli Poste</b></strong></h1>
+</div>
+<div class="container mt-3">
+  <h3 class="text-center"><strong>Scrivi un'e-mail:</strong></h3>
+  <form (submit)="salvaEmail()" class="was-validated" style="max-width: 50%; margin-left: auto; margin-right: auto;">
+      <div class="mb-3 mt-3">
+          <label for="uname" class="form-label">Metti la tua e-mail:</label>
+          <input type="text" class="form-control" id="uname"  name="mittente" required [(ngModel)]="mittente">
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Inserisci il testo.</div>
+      </div>
+      <div class="mb-3 mt-3">
+          <label for="subject" class="form-label">Oggetto dell'e-mail:</label>
+          <input type="text" class="form-control" id="subject"  name="oggetto" required [(ngModel)]="oggetto">
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Inserisci il testo.</div>
+      </div>
+      <div class="mb-3 mt-3">
+          <label for="message" class="form-label">Testo dell'e-mail:</label>
+          <input class="form-control" id="message"  name="testo" required [(ngModel)]="testo">
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Inserisci il testo.</div>
+      </div>
+      <div class="mb-3">
+          <label for="pwd" class="form-label">Destinatario dell'e-mail:</label>
+          <input type="text" class="form-control" id="pwd"  name="destinatario" required [(ngModel)]="destinatario">
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Inserisci il testo.</div>
+      </div>
+      <button type="submit" class="btn btn-danger mx-auto d-block btn-lg ">INVIA</button>
+  </form>
+</div>
+
+<app-sent-email class="text-center"[emails]="emails"></app-sent-email>
